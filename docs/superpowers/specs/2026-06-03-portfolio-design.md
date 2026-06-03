@@ -14,7 +14,8 @@ A personal portfolio website to present Alaeddine Tabbane (Senior Full-Stack Eng
 - Distinctive, memorable visual identity ("Holo Data HUD" aesthetic) — not generic AI slop.
 - Communicates positioning (real-time, fintech, full-stack, cross-platform, AI-assisted delivery) within 5 seconds.
 - Content sourced from existing CV + LinkedIn material (already written in `C:\Users\alaed\MEGAsync\documents\cv\`).
-- Bilingual (EN/FR), responsive, accessible, fast.
+- Bilingual (EN/FR), **fully responsive and mobile-first**, accessible, fast.
+- Looks and works flawlessly on phones (the most common device for a recruiter opening a link) — no horizontal scroll, tap-friendly targets, readable type.
 - Lives at a clean URL on GitHub Pages, redeploys automatically on push.
 
 **Audience:** Technical recruiters, hiring managers, and prospective freelance clients (remote-first, international + francophone).
@@ -45,6 +46,30 @@ Validated via interactive mockup (`hero-holo-v2.html`). Dark, futuristic, fintec
 **Motion:** Framer Motion — staggered fade-up on hero load, reveal-on-scroll per section, subtle aurora drift. Respect `prefers-reduced-motion`.
 
 **Theme:** Dark-only by design (no light/dark toggle — YAGNI).
+
+---
+
+## 2b. Responsive & Mobile-First Design
+
+First-class requirement. The site is designed mobile-first and scales up, not the reverse.
+
+**Breakpoints (Tailwind defaults):** base (mobile, <640px) → `sm` 640 → `md` 768 → `lg` 1024 → `xl` 1280. Layouts authored at the base width first, enhanced upward.
+
+**Per-section responsive behavior:**
+- **Nav:** full horizontal links on `md`+; collapses to a hamburger → slide-in drawer on mobile. Language toggle and "Open to work" pill remain reachable on mobile.
+- **Hero:** `clamp()`-based fluid type (already in mockup); name/tagline reflow; HUD metrics grid goes 4-up (desktop) → 2-up (mobile). CTAs stack full-width on narrow screens.
+- **About:** headshot + text side-by-side on `md`+, stacked (photo on top) on mobile.
+- **Skills:** chip groups wrap fluidly.
+- **Experience / Projects summaries:** multi-column cards on desktop → single column on mobile.
+- **`/experience` timeline:** centered rail on desktop → left-aligned single rail on mobile.
+- **`/projects` grid & `/projects/[slug]`:** responsive grid (3→2→1 cols); case-study media scales within container.
+
+**Mobile UX rules:**
+- No horizontal overflow at any width (≥320px). Background glow/grid layers must not force scroll.
+- Tap targets ≥ 44×44px; adequate spacing between interactive elements.
+- Body text ≥ 16px on mobile; sufficient contrast.
+- Glow/scanline effects toned down on small screens for performance and legibility; honor `prefers-reduced-motion`.
+- Images use intrinsic sizing to avoid layout shift.
 
 ---
 
@@ -133,7 +158,8 @@ Validated via interactive mockup (`hero-holo-v2.html`). Dark, futuristic, fintec
 ## 8. Verification
 
 - `npm run build` completes with no errors; static export emitted to `out/`.
-- Local preview (`npx serve out`) — all routes load, EN/FR toggle works, CV downloads, links correct, responsive at mobile/tablet/desktop breakpoints.
+- Local preview (`npx serve out`) — all routes load, EN/FR toggle works, CV downloads, links correct.
+- **Responsive verification:** check 320px, 375px (iPhone SE/12), 768px (tablet), 1024px, 1440px — no horizontal scroll at any width, nav drawer works on mobile, all sections reflow correctly, tap targets ≥44px, text readable. Verified via browser devtools device emulation (and a real phone if available).
 - `prefers-reduced-motion` honored.
 - Basic a11y pass (semantic landmarks, alt text on headshot, focus states, color contrast on body text).
 - After first deploy: confirm the live `https://alaeddinetabbane.github.io` URL renders correctly.
