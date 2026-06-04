@@ -33,6 +33,23 @@ export function ProjectGrid() {
           );
         })}
       </div>
+      <h2 className="mb-6 mt-16 font-mono text-sm uppercase tracking-widest text-cyan">// {t.projects.enterpriseTitle}</h2>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {t.projects.enterprise.map((m) => (
+          <div key={m.name} className="flex h-full flex-col rounded-xl border border-line bg-white/[0.02] p-5">
+            <div className="flex items-start justify-between gap-2">
+              <h3 className="text-base font-semibold text-ink">{m.name}</h3>
+              {m.href && (
+                <a href={m.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${m.name}`} className="text-mut transition hover:text-cyan">
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              )}
+            </div>
+            <p className="mt-2 flex-1 text-sm leading-relaxed text-[#c8d1ea]">{m.desc}</p>
+            <div className="mt-3 flex flex-wrap gap-2">{m.stack.map((s) => <TechTag key={s}>{s}</TechTag>)}</div>
+          </div>
+        ))}
+      </div>
       <h2 className="mb-6 mt-16 font-mono text-sm uppercase tracking-widest text-cyan">// {t.projects.moreTitle}</h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {t.projects.more.map((m) => (
