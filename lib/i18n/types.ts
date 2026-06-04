@@ -30,7 +30,7 @@ export interface Dictionary {
   about: { heading: string; bio: string[]; facts: { label: string; value: string }[] };
   skills: { heading: string; groups: { label: string; items: string[] }[] };
   experience: { heading: string; subtitle: string; viewAll: string; pageTitle: string; roles: Role[] };
-  projects: { heading: string; subtitle: string; viewAll: string; pageTitle: string; caseStudy: string; problemLabel: string; solutionLabel: string; resultsLabel: string; stackLabel: string; items: ProjectContent[] };
+  projects: { heading: string; subtitle: string; viewAll: string; pageTitle: string; caseStudy: string; problemLabel: string; solutionLabel: string; resultsLabel: string; stackLabel: string; items: ProjectContent[]; moreTitle: string; more: { name: string; desc: string; stack: string[]; href: string }[] };
   contact: { heading: string; blurb: string; emailCta: string; email: string; location: string };
   footer: { builtWith: string };
 }
