@@ -1,3 +1,9 @@
+import { Hero } from '@/components/sections/Hero';
+
 export default function Home() {
-  return <main style={{ padding: 40 }}>Portfolio scaffold OK</main>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }
