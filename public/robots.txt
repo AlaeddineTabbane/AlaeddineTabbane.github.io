@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alaeddinetabbane.github.io/sitemap.xml
