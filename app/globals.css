@@ -1,1 +1,58 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-ink: var(--ink);
+  --color-mut: var(--mut);
+  --color-cyan: var(--cyan);
+  --color-bluey: var(--blue);
+  --color-mag: var(--mag);
+  --color-mint: var(--mint);
+  --color-line: var(--line);
+  --font-sora: var(--font-sora), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
+:root {
+  --bg: #070a12;
+  --bg2: #0a0f1d;
+  --ink: #e9eefb;
+  --mut: #8a97b8;
+  --cyan: #5eeaff;
+  --blue: #8a9bff;
+  --mag: #ff5ea0;
+  --mint: #23e5b0;
+  --line: rgba(120, 160, 255, 0.18);
+}
+
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+
+/* Iridescent gradient text */
+.text-holo {
+  background: linear-gradient(108deg, #eaf2ff 6%, var(--cyan) 36%, var(--blue) 56%, var(--mag) 84%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 34px rgba(94, 234, 255, 0.35)) drop-shadow(0 0 60px rgba(255, 94, 160, 0.18));
+}
+
+/* Faded grid background layer */
+.bg-grid {
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 0%, #000 35%, transparent 80%);
+  mask-image: radial-gradient(120% 90% at 50% 0%, #000 35%, transparent 80%);
+}
+
+/* Faint scanlines */
+.scanlines {
+  background: repeating-linear-gradient(transparent 0 3px, rgba(140, 200, 255, 0.022) 3px 4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
