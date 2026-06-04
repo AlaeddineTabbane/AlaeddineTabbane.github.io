@@ -7,6 +7,7 @@ export interface Role {
   location: string;
   bullets: string[];
   tech: string[];
+  link?: string;
 }
 
 export interface ProjectContent {
@@ -16,6 +17,7 @@ export interface ProjectContent {
   year: string;
   role: string;
   stack: string[];
+  links: { label: string; href: string }[];
   summary: string;
   problem: string;
   solution: string;

@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { useLang } from '@/lib/i18n/LanguageContext';
 import { Section } from '@/components/Section';
 import { HudFrame } from '@/components/HudFrame';
@@ -24,6 +24,15 @@ export function ProjectCaseStudy({ slug }: { slug: string }) {
       <h1 className="mt-2 text-4xl font-extrabold text-holo">{p.name}</h1>
       <p className="mt-2 text-lg text-mut">{p.tagline}</p>
       <p className="mt-1 font-mono text-xs text-mut">{p.year} · {p.role}</p>
+      {p.links.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-3">
+          {p.links.map((l) => (
+            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-cyan/40 bg-cyan/[0.06] px-4 text-sm text-cyan transition hover:bg-cyan/[0.12]">
+              <ExternalLink className="h-4 w-4" /> Visit {l.label}
+            </a>
+          ))}
+        </div>
+      )}
 
       <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#c8d1ea]">{p.summary}</p>
 

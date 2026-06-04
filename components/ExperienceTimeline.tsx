@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { useLang } from '@/lib/i18n/LanguageContext';
 import { Section } from '@/components/Section';
 import { SectionReveal } from '@/components/SectionReveal';
@@ -20,6 +20,11 @@ export function ExperienceTimeline() {
               <h2 className="text-xl font-semibold text-ink">{r.title} <span className="text-cyan">· {r.company}</span></h2>
               <span className="font-mono text-xs text-mut">{r.period} · {r.location}</span>
             </div>
+            {r.link && (
+              <a href={r.link} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center gap-1 font-mono text-xs text-cyan hover:underline">
+                <ExternalLink className="h-3 w-3" /> {r.link.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+              </a>
+            )}
             <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed text-[#c8d1ea]">
               {r.bullets.map((b, j) => <li key={j}>{b}</li>)}
             </ul>
