@@ -1,7 +1,7 @@
 import type { Dictionary } from './types';
 
 export const fr: Dictionary = {
-  nav: { work: 'Travaux', about: 'À propos', stack: 'Stack', experience: 'Expérience', projects: 'Projets', contact: 'Contact', openToWork: 'Ouvert aux opportunités', backHome: "Retour à l'accueil" },
+  nav: { about: 'À propos', stack: 'Stack', experience: 'Expérience', projects: 'Projets', contact: 'Contact', openToWork: 'Ouvert aux opportunités', backHome: "Retour à l'accueil" },
   hero: {
     kicker: '// INGÉNIEUR FULL-STACK SENIOR · TECH LEAD',
     tagline: "Je conçois des produits full-stack temps réel — Web, Android et iOS depuis une seule base de code. 6+ ans en MERN, Angular/Ionic et systèmes fintech, avec des workflows assistés par IA.",
@@ -74,6 +74,7 @@ export const fr: Dictionary = {
     blurb: "Ouvert aux postes Senior Full-Stack / Tech Lead (remote-first), aux projets fintech & temps réel, et au conseil en architecture. Je réponds à chaque message.",
     emailCta: 'Écrivez-moi',
     email: 'alaeddine.tabbane@gmail.com',
+    location: 'Nabeul, Tunisie',
   },
   footer: { builtWith: 'Conçu avec Next.js · Déployé sur GitHub Pages' },
 };

@@ -1,7 +1,7 @@
 import type { Dictionary } from './types';
 
 export const en: Dictionary = {
-  nav: { work: 'Work', about: 'About', stack: 'Stack', experience: 'Experience', projects: 'Projects', contact: 'Contact', openToWork: 'Open to work', backHome: 'Back to home' },
+  nav: { about: 'About', stack: 'Stack', experience: 'Experience', projects: 'Projects', contact: 'Contact', openToWork: 'Open to work', backHome: 'Back to home' },
   hero: {
     kicker: '// SENIOR FULL-STACK ENGINEER · TECH LEAD',
     tagline: 'I build real-time, full-stack products — Web, Android & iOS from a single codebase. 6+ years across MERN, Angular/Ionic and fintech systems, shipping with AI-assisted workflows.',
@@ -74,6 +74,7 @@ export const en: Dictionary = {
     blurb: "Open to Senior Full-Stack / Tech Lead roles (remote-first), fintech & real-time builds, and architecture consulting. I reply to every message.",
     emailCta: 'Email me',
     email: 'alaeddine.tabbane@gmail.com',
+    location: 'Nabeul, Tunisia',
   },
   footer: { builtWith: 'Built with Next.js · Deployed on GitHub Pages' },
 };

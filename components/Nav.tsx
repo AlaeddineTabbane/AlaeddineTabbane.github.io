@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { useLang } from '@/lib/i18n/LanguageContext';
@@ -8,6 +8,13 @@ import { LanguageToggle } from './LanguageToggle';
 export function Nav() {
   const { t } = useLang();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [open]);
   const links = [
     { href: '/#about', label: t.nav.about },
     { href: '/#stack', label: t.nav.stack },

@@ -1,3 +1,4 @@
+// Server component (Next.js requirement) — cannot access LanguageContext, so this page is English-only by necessity.
 import Link from 'next/link';
 
 export default function NotFound() {
