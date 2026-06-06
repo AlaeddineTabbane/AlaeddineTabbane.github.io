@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${BASE}/`, lastModified: LAST, priority: 1.0 },
     { url: `${BASE}/cv/Alaeddine-Tabbane-EN.pdf`, lastModified: LAST, priority: 0.8 },
+    { url: `${BASE}/cv/Alaeddine-Tabbane-FR.pdf`, lastModified: LAST, priority: 0.8 },
     { url: `${BASE}/experience/`, lastModified: LAST, priority: 0.9 },
     { url: `${BASE}/projects/`, lastModified: LAST, priority: 0.9 },
     ...PROJECT_SLUGS.map((slug) => ({
